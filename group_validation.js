@@ -11,6 +11,10 @@ export class Validation extends plugin {
     }
     async accept() {
         let uid = this.e.user_id;
+        logger.mark("收到加群申请" + this.e.logText + "，正在进行验证");
+        logger.mark(this.e.comment);
+        logger.mark(this.e.tips);
+        logger.mark(this.e.flag);
         await this.e.approve(true)
     }
 }
